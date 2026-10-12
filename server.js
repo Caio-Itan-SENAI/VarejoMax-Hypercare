@@ -27,11 +27,6 @@ app.post("/api/pagamento", (req, res) => {
     return res.status(400).json({ erro: "Informe o número do pedido." });
   }
 
-  // Falha reproduzível para o exercício BUG-001.
-  if (codigoTeste === "FALHA") {
-    return res.status(503).json({ erro: "Pagamento temporariamente indisponível." });
-  }
-
   res.json({
     aprovado: true,
     pedidoId,
