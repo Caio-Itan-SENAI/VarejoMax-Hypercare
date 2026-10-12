@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VarejoMax | Acompanhamento de pedidos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container">
+      <p class="marca">VarejoMax</p>
+      <h1>Acompanhamento de pedidos</h1>
+      <p class="subtitulo">Ambiente local para demonstração de controle de versão e hotfix.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="painel">
+      <div class="cabecalho-secao">
+        <h2>Pedidos recentes</h2>
+        <button id="atualizar">Atualizar pedidos</button>
+      </div>
+      <p id="estado" class="estado" role="status">Carregando pedidos...</p>
+      <div id="pedidos" class="pedidos"></div>
+    </section>
+
+    <section class="painel">
+      <h2>Teste de pagamento local</h2>
+      <p class="aviso">Este formulário não processa pagamentos reais.</p>
+      <label for="pedidoId">Número do pedido</label>
+      <input id="pedidoId" type="number" value="1001" min="1">
+      <label for="codigoTeste">Cenário de teste</label>
+      <select id="codigoTeste">
+        <option value="OK">Fluxo normal</option>
+        <option value="FALHA">Reproduzir falha de pagamento (BUG-001)</option>
+      </select>
+      <button id="pagar">Testar pagamento</button>
+      <p id="resultadoPagamento" class="estado" role="status"></p>
+    </section>
+
+    <section class="painel">
+      <h2>Teste de consulta da API</h2>
+      <p>Use o botão para consultar pedidos normalmente ou reproduzir o erro 500.</p>
+      <div class="acoes">
+        <button id="consultarNormal">Consulta normal</button>
+        <button id="consultarErro" class="secundario">Reproduzir HTTP 500 (BUG-002)</button>
+      </div>
+      <pre id="resultadoApi" class="resultado">Aguardando consulta.</pre>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">VarejoMax — projeto acadêmico local • sem pagamentos reais</div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

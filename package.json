@@ -1,0 +1,12 @@
+{
+  "name": "varejomax-projeto-git",
+  "version": "1.0.0",
+  "description": "Projeto acadêmico simples para demonstrar Git, branches de hotfix e testes locais.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
