@@ -13,10 +13,6 @@ const pedidos = [
 ];
 
 app.get("/api/pedidos", (req, res) => {
-  // Falha reproduzível para o exercício BUG-002.
-  if (req.query.erro === "1") {
-    return res.status(500).json({ erro: "Erro interno ao consultar pedidos." });
-  }
   res.json({ pedidos });
 });
 
